@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Add link";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="~/css/AddLink.css" asp-append-version="true" />
+    </head>
+<body style="background-color: black">
+    <div class="text-center">
+        <h1 class="display-4" style="color:orangered;">Add a link</h1>
+        <hr />
+        <form action="addlinktodb" method="post" class="mainDiv">
+            <input class="titleInput form-control" type="text" name="title" id="" placeholder="Enter title here..." maxlength="255" required />
+            <br />
+            <textarea name="description" id="" placeholder="Enter a description (Optional)" class="descInput form-control" maxlength="2000" rows="10"></textarea>
+            <br />
+            <input type="submit" value="Publish link" class="form-control" />
+        </form>
+    </div>
+</body>
+</html>

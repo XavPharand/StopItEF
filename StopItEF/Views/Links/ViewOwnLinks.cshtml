@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "User Links";
+    Layout = "_Layout";
+
+}
+@model IEnumerable<StopItEF.Models.Link>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="~/css/ViewOwnLinks.css" asp-append-version="true" />
+    </head>
+<body style="background-color: black">
+    <div class="text-center">
+        <h1 class="display-4" style="color:orangered;">Your links</h1>
+        <hr />
+        <div>
+            @if(Model != null){
+                @foreach (var item in Model)
+                {
+                    <partial name="_LinkTemplate" model="item" />
+                    <div style="position:relative; margin-right: 130px; float: right; top: -160px;">
+                        <a asp-action="DeleteLink" asp-controller="Links" asp-route-linkid="@item.LinkId" class="deleteLink">&#x274C; Delete</a>
+                    </div>
+                }
+            }
+            else{
+                <p style="color:white;">No links found for this user!</p>
+            }
+        </div>
+    </div>
+    @if (ViewBag.Success != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Success");
+            };
+        </script>
+    }
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿.optionsList {
+    display: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    right: 10px;
+}
+
+.viewOwnLinks {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+.addLink {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 18px;
+    border-top: 2px solid white;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+.disconnectFromApp {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 18px;
+    border-top: 2px solid white;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+.username{
+    padding-left: 5px;
+    width: max-content;
+    height:max-content;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+a:hover, a:visited:hover{
+    color: red;
+}
+
+h3 {
+    cursor: pointer;
+}

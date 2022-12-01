@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/SignUp.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <div class="mainDiv">
+        <p class="inscription">Inscription</p>
+        <form action="/home/signup" method="post">
+            <label for="pseudo">Choisir votre nom d'utilisateur</label>
+            <input class="form-control" type="text" name="username" id="username" placeholder="john123" onchange="verifyName" maxlength="30" required/>
+            <p id="exists" hidden></p>
+            <br />
+            <label for="email">Entrer votre email</label>
+            <input class="form-control" type="email" name="email" id="" placeholder="xyz@example.com" maxlength="100" required/>
+            <br />
+            <label for="password">Entrer votre mot de passe</label>
+            <input type="password" name="password" id="password" class="form-control" maxlength="50" required/>
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+            <br />
+            <input type="submit" value="Create account" class="form-control" />
+        </form>
+        <p>Already have an account? <a asp-area="" asp-controller="Home" asp-action="SignIn">Go to connection page</a></p>
+    </div>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+    </script>
+</body>
+</html>

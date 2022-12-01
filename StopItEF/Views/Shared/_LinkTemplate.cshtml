@@ -1,0 +1,31 @@
+﻿@{
+    int? amountOfVotes = 0;
+    int amountOfComments = Model.Comments.Count;
+    foreach(Vote vote in Model.Votes){
+        amountOfVotes += vote.Value;
+    }
+}
+
+<link rel="stylesheet" href="~/css/LinkTemplate.css" asp-append-version="true" />
+
+
+@model StopItEF.Models.Link
+<div class="linkMainDiv">
+    <div>
+        <p style="float: right; margin-right: 10px; color: black;">Date: @Model.PublicationDate</p>
+        <p class="originalPoster">Post by: @Model.User.Pseudo</p>
+    </div>
+    <div class="linkTitleDiv">
+        <a class="linkTitle" asp-action="Viewlink" asp-controller="Links" asp-route-linkId=@Model.LinkId>@Model.Title</a>
+    </div>
+    <div>
+        <p style="text-align: left; margin-left:10px; color:black; font-weight:bolder;">Description</p>
+        <div class="descDiv">
+            <p style="text-align:justify-all; padding:5px;">@Model.Description</p>
+        </div>
+    </div>
+    <div>
+        <span>@amountOfComments Commentaires</span>
+        <span style="margin-left: 30px;">@amountOfVotes Vote(s)</span>
+    </div>
+</div>

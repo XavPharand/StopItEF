@@ -1,0 +1,36 @@
+﻿.mainDiv {
+    background-image: radial-gradient(circle at center, darkorange 65%, black);
+    margin: auto;
+    width: 80%;
+    height: max-content;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+input[type=submit] {
+    background-image: radial-gradient(orange 0, darkorange 70%, black 100%);
+    border-radius: 13px;
+    margin: auto;
+    width: auto;
+    height: auto;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Comic Sans MS';
+    border: thick solid #000000;
+    color: black;
+    cursor: pointer;
+}
+
+.titleInput {
+    margin: auto;
+    width: 80%;
+}
+
+.descInput {
+    margin: auto;
+    width: 80%;
+    overflow-y: scroll;
+}

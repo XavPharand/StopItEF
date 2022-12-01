@@ -1,0 +1,56 @@
+﻿.linkMainDiv{
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: orangered;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.originalPoster{
+    text-align: left;
+    margin: 10px;
+    color: black;
+}
+
+.linkTitle{
+    text-align: left;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.linkTitle:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.linkTitle:visited:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+.descDiv{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: contain;
+    height: 100px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    overflow-y: scroll;
+    word-break: break-all;
+}
+
+.linkTitleDiv {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    overflow-y: scroll;
+    word-break: break-all;
+    height: 35px;
+    width: contain;
+    line-height: 1.4em;
+}

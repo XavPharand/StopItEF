@@ -1,0 +1,71 @@
+﻿@{
+    string? username = TempData.Peek("Username") as string;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StopIt</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StopItEF.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <span style="margin-right: 7px;">
+                    <img src="~/stopit_logo.jpg" alt="logo" width="60" height="50" />
+                </span>
+                
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span style="font-size: 32px; color:orangered; font-weight:bold;">Stop</span><span style="font-size: 30px; font-style:italic;">it</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li style="font-style:italic; font-family:'Comic Sans MS'; color:orange; font-size: 16px; margin-top: 6px">Get some help!</li>
+                    </ul>
+                </div>
+                <h3 class="username" id="username">@username    <i class="glyphicon glyphicon-chevron-right" id="fleche"></i></h3>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="optionsList" id="options">
+            <a class="viewOwnLinks" asp-action="ViewOwnLinks" asp-controller="Links" asp-route-username="@username">Voir liens</a> <br />
+            <a class="addLink" asp-action="AddLinkView" asp-controller="Links">Ajouter un lien</a> <br />
+            <a class="disconnectFromApp" asp-action="Disconnect" asp-controller="Home">Se déconnecter</a>
+        </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script>
+        const fleche = document.getElementById("fleche");
+        const options = document.getElementById("options");
+        const username = document.getElementById("username");
+
+        username.onclick = function(){
+            if (options.style.display !== "none") {
+                fleche.style.transform = 'rotate(0deg)';
+                options.style.display = "none";
+            }
+            else{
+                fleche.style.transform = 'rotate(90deg)';
+                options.style.display = "grid";
+            }
+        }
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

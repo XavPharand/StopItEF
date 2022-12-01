@@ -1,0 +1,60 @@
+﻿@model StopItEF.Models.Link
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+    int? amountOfVotes = 0;
+    foreach (Vote vote in Model.Votes)
+    {
+        amountOfVotes += vote.Value;
+    }
+    int? upvotes = Model.Votes.Where(v => v.Value == 1).Count();
+    int? downvotes = Model.Votes.Where(v => v.Value == -1).Count();
+}
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/ViewLink.css" asp-append-version="true" />
+    </head>
+<body style="background-color: black;">
+
+<div>
+    <h1 class="display-4" style="color:orangered; text-align: center;">Link Details</h1>
+    <hr />
+    <div class="topG">
+            <p class="description">@Model.Description</p>
+            <div class="votes">
+                <p><span style="color: black; font-weight: bold;">Rating: </span><span style="color: black; font-weight: bolder;">@amountOfVotes Vote(s)</span></p>
+                <span class="upvote">@upvotes   <a asp-action="checkVote" asp-controller="Links" asp-route-votetype="upvote" asp-route-idlink="@Model.LinkId" style="text-decoration: none;"><i class="fa fa-thumbs-up" style="color: blue;"></i></a></span> <br />
+                <span style="font-size: 30px;">@downvotes   <a asp-action="checkVote" asp-controller="Links" asp-route-votetype="downvote" asp-route-idlink="@Model.LinkId" style="text-decoration: none;"><i class="fa fa-thumbs-down" style="color: red;"></i></a></span>
+
+            </div>
+            <div class="centerInfo">
+                <div class="titleDiv">
+                    <p class="title">@Model.Title</p>
+                </div>
+                <p class="postedBy">Posted by @Model.User.Pseudo on @Model.PublicationDate</p>
+            </div>
+    </div>
+</div>
+<form action="addComment" method="post" class="mainDiv">
+    <div style="align-content:center;">
+            <textarea rows="3" cols="100" type="text" placeholder="What is your reaction to this link?" name="comment" maxlength="2000" required></textarea>
+    </div>
+        <br />
+        <input type="text" value="@Model.LinkId" name="_linkid" hidden/>
+        <div style="display: flex; flex-direction: column; align-items: flex-end;">
+            <input type="submit" value="Comment" class="form-control" />
+        </div>
+        <br />
+    </form>
+<div>
+    <h1 style="color: white;">Comments</h1>
+    <hr />
+    @foreach(var comment in Model.Comments){
+        <partial name="_CommentTemplate" model="comment" />
+    }
+</div>
+</body>
+</html>

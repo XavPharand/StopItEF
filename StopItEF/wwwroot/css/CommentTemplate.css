@@ -1,0 +1,32 @@
+﻿.commentMainDiv {
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: darkorange;
+    width: 50%;
+    height: max-content;
+    margin-bottom: 10px;
+}
+
+.userSpan {
+    text-align: left;
+    margin: 10px 10px 0px 10px;
+    color: black;
+}
+
+.dateSpan {
+    float: right;
+    color: black;
+}
+
+.textSpan {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: contain;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow-y: scroll;
+    word-break: break-all;
+    background-color: white;
+    padding: 2px 0px 0px 3px;
+}

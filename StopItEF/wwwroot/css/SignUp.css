@@ -1,0 +1,68 @@
+﻿.mainDiv {
+    background-image: radial-gradient(circle at center, darkorange 73%, black);
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    width: 350px;
+    height: 450px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+label {
+    font-family: 'Comic Sans MS';
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    height: auto;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    font-size: 18px
+}
+
+input[type=submit] {
+    background-image: radial-gradient(orange 0, darkorange 70%, black 100%);
+    border-radius: 13px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: auto;
+    height: auto;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Comic Sans MS';
+    border: thick solid #000000;
+    cursor: pointer;
+}
+
+body {
+    background-image: radial-gradient(circle at center, black 50%, orange, orangered 100%);
+    height: 100%
+}
+
+html {
+    height: 100%
+}
+
+.inscription {
+    font-size: 34px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 4px solid #000000;
+    width: 350px;
+}
+
+i {
+    margin-left: -21px;
+    cursor: pointer;
+}

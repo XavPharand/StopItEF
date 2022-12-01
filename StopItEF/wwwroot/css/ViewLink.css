@@ -1,0 +1,87 @@
+﻿input[type=submit] {
+    background-image: radial-gradient(orange 0, darkorange 70%, black 100%);
+    border-radius: 13px;
+    margin: auto;
+    width: auto;
+    height: auto;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Comic Sans MS';
+    border: thick solid #000000;
+    color: black;
+    cursor: pointer;
+}
+
+textarea {
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.mainDiv {
+    background-image: radial-gradient(circle at center, darkorange 65%, black);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    width: max-content;
+    padding: 10px;
+}
+
+.upvote {
+    margin-right: 30px;
+    font-size: 30px;
+}
+
+.description {
+    float: right;
+    margin: 15px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    height: 120px;
+    width: 50%;
+    overflow-y: scroll;
+    word-break: break-all;
+}
+
+.votes {
+    float: left;
+    margin: 15px;
+}
+
+.centerInfo {
+    margin-left: 170px;
+    padding-top: 15px;
+}
+
+.titleDiv {
+    display: block;
+    width: 350px;
+    height: 80px;
+    overflow-y: scroll;
+    border-bottom: 2px solid black;
+    word-break: break-all;
+    overflow-y: scroll;
+}
+
+.title {
+    font-size: 16px;
+    color: black;
+    font-weight: bolder;
+}
+
+.postedBy {
+    margin-top: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+.topG {
+    background-color: darkorange;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    height: 150px;
+}

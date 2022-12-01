@@ -1,0 +1,11 @@
+﻿
+
+
+<link rel="stylesheet" href="~/css/CommentTemplate.css" asp-append-version="true" />
+
+@model StopItEF.Models.Comment
+<div class="commentMainDiv">
+    <header class="userSpan">@Model.User.Pseudo said:<span class="dateSpan">Date: @Model.PublicationDate</span></header>
+    <br />
+    <p class="textSpan">@Model.Text</p>
+</div>

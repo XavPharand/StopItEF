@@ -1,0 +1,13 @@
+﻿.deleteLink {
+    font-size: 30px;
+    text-decoration: none;
+    color: indianred;
+    padding: 5px;
+}
+
+.deleteLink:hover {
+    border: 2px solid red;
+    border-radius: 5px;
+    text-decoration: none;
+    color: red;
+}
